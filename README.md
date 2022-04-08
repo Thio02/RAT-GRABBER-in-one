@@ -1,4 +1,9 @@
-# DiscordRAT
+# DISCORDRAT
+
+This is a RAT plus a free online grabber ( I didn't create anything I just modified it ) 
+
+
+# RAT
 Discord Remote Administration Tool fully written in Python3.
 
 This is a RAT controlled over Discord with over 50 post exploitation modules.

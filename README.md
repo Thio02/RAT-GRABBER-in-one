@@ -1,9 +1,4 @@
-# Description
-
-This is a RAT plus a free online grabber ( I didn't create anything I just modified it ) 
-
-
-# RAT
+# DiscordRAT
 Discord Remote Administration Tool fully written in Python3.
 
 This is a RAT controlled over Discord with over 50 post exploitation modules.
@@ -13,7 +8,7 @@ This is a RAT controlled over Discord with over 50 post exploitation modules.
 This tool is for educational use only, the author will not be held responsible for any misuse of this tool.
 
 ## **Credits**
-This project was originally made by https://github.com/Sp00p64/DiscordRAT and https://github.com/codeuk/TrollWare, this entire readme.md is made by him too.\
+This project was originally made by https://github.com/Sp00p64/DiscordRAT, this entire readme.md is made by him too.\
 Credit goes to him for all the original modules and readme.md
 
 ## **Setup Guide:**
@@ -107,4 +102,6 @@ pip uninstall enum34
 ```
 
 ## **Contact:**
-you can contact me on discord Thio#8707
+Feel free to contact me if you have any problems.
+I also make custom version of this tool, so if you want something added feel free to ask by joining by discord server.
+https://discord.gg/V589WeDmUr.

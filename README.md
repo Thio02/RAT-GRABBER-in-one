@@ -1,4 +1,4 @@
-# DISCORDRAT
+# Description
 
 This is a RAT plus a free online grabber ( I didn't create anything I just modified it ) 
 
